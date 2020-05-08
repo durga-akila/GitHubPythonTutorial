@@ -29,7 +29,7 @@ def navigate_to_addnewpayee(driver):
 @pytest.mark.parametrize("name,addrs,acc,details",getdata())
 def test_01(driver, navigate_to_addnewpayee,name,addrs,acc,details):
     global test
-    test = Test("Add New payee: " +  name,
+    test = Test("Add New payee: payee name: " +  name,
                 description="Add new payee sceario validation",
                 priority=Priority.HIGH)
     test.log("Navigated successfully to Add New Payee page")
