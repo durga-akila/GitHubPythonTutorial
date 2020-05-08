@@ -26,14 +26,14 @@ def navigate_to_addnewpayee(driver):
     yield
     test.finish()
 
-@pytest.mark.parametrize("name,addrs,acc,details",getdata())
-def test_01(driver, navigate_to_addnewpayee,name,addrs,acc,details):
+@pytest.mark.parametrize("name,addrs,acc,detail",getdata())
+def test_01(driver, navigate_to_addnewpayee,name,addrs,acc,detail):
     global test
     test = Test("Add New payee: payee name: " +  name,
                 description="Add new payee sceario validation",
                 priority=Priority.HIGH)
     test.log("Navigated successfully to Add New Payee page")
     paybills = PayBillsPage(driver)
-    paybills.add_payee(name,addrs,acc,details)
+    paybills.add_payee(name,addrs,acc,detail)
     test.take_screenshot()
     test.assert_are_equal("Hello","Hello","sdjkagsdfjgjlahfgj",True)
