@@ -36,4 +36,4 @@ def test_01(driver, navigate_to_addnewpayee,name,addrs,acc,details):
     paybills = PayBillsPage(driver)
     paybills.add_payee(name,addrs,acc,details)
     test.take_screenshot()
-    test.assert_are_equal("Hello","Hello","sdjkagsdfjgjlahfgj",True)
+    test.verify_are_equal("Hello","Hello","sdjkagsdfjgjlahfgj",onfail_screenshot=True)
